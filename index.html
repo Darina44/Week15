@@ -9,10 +9,48 @@
 </head>
 
 <body>
-    <input type="text" id="test">
+    <!-- <input type="text" id="test"
+        onkeyup="document.getElementById('result').innerText = document.getElementById('test').value;"
+        onmouseover="colorMe()" onmouseout="colorMeBack()">
     <button>Нажми меня</button>
+    <div id="result"></div> -->
 
-    <script src="/index.js"></script>
+    <select name="breed" id="breed" onchange="show()">
+        <option disabled selected="selected">выберите породу</option>
+        <option value="persians">персидская</option>
+        <option value="siamese">сиамская</option>
+        <option value="british">британская</option>
+        <option value="scottish">шотландская</option>
+    </select>
+
+    <div id="result">
+        <img src="" id="catImage" width="300">
+    </div>
+
+    <script>
+        function show() {
+
+            switch (document.getElementById("breed").value) {
+                case "persians":
+                    document.getElementById("catImage").src =
+                        "https://lapkins.ru/upload/resize_cache/uf/0a7/293_293_2/0a75602af2c125ffa361637dd8d0e2bb.jpg";
+                    break;
+                case "siamese":
+                    document.getElementById("catImage").src =
+                        "https://pet-portal.ru/wp-content/uploads/siamese-cat.jpg";
+                    break;
+            }
+
+        }
+
+        // function colorMe() {
+        //     document.getElementById('test').style.backgroundColor = 'yellow';
+        // }
+
+        // function colorMeBack() {
+        //     document.getElementById('test').style.backgroundColor = 'white';
+        // }
+    </script>
 </body>
 
 </html>
