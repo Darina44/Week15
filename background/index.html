@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .background {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background" id="background">
+        выберете тему:
+        <select name="color" id="color" onchange="changeBackground()">
+            <option value="light">светлая</option>
+            <option value="dark">темная</option>
+            <option value="blue">синяя</option>
+        </select>
+    </div>
+    <script>
+        function changeBackground() {
+            switch (document.getElementById("color").value) {
+                case "light":
+                    document.getElementById("background").style.backgroundColor = 'lightgrey';
+                    break;
+                case "dark":
+                    document.getElementById("background").style.backgroundColor = 'grey';
+                    break;
+                case "blue":
+                    document.getElementById("background").style.backgroundColor = 'lightblue';
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
