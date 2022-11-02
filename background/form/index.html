@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<br lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-wrapper {
+            width: 30%;
+            min-width: 300px;
+            background-color: antiquewhite;
+            border-radius: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            margin: 2%;
+        }
+
+        .sex-selector {
+            margin: 3% 0;
+        }
+
+        .country-selector {
+            margin: 3% 0;
+        }
+
+        .emailform {
+            margin: 3% 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <h1>Регистрация:</h1>
+        <form id="form">
+            <label for="name">Имя</label>
+            <input type="text" id="name"></form>
+        <label for="lastname">Фамилия</label>
+        <input type="text" id="lastname">
+        <div class="sex-selector">
+            <p>Пол:</p>
+            <input type="radio" name="sex">женский
+            <input type="radio" name="sex">мужской
+        </div>
+        <div class="country-selector">
+            <select name="country" id="country">
+                <option>Выберите страну проживания:</option>
+                <option value="Россия">Россия</option>
+                <option value="Украина">Украина</option>
+                <option value="Беларусь">Беларусь</option>
+            </select>
+        </div>
+        <div class="emailform">
+            <label for="email">Email</label>
+            <input type="email">
+        </div>
+        <button id="send">Отправить</button>
+        </form>
+    </div>
+
+    <script>
+        let name = document.getElementById("name").value;
+        let button = document.getElementById("send");
+        button.onclick = function () {
+            if (country.value = 'Россия') {
+                alert('Для России в данный момент регистрация невозможна')
+            } else if (name == '') {
+                alert('Пожалуйста, заполните поле "Имя".')
+            } else {
+                alert(`Добро пожаловать, ${name}!`);
+            }
+        }
+    </script>
+</body>
+
+</html>
