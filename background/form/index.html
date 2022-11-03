@@ -94,22 +94,29 @@
     <script>
         let name = document.getElementById("name");
         let button = document.getElementById("send");
+        let email = document.getElementById("email");
+        let password = document.getElementById("psw");
+        let passwordR = document.getElementById("psw-repeat");
+        let select = document.getElementById("country");
+        let checkbox = document.getElementById("agree");
 
         button.onclick = sendForm;
 
         function sendForm() {
-            alert((name).value);
+            if (name.value == '') {
+                alert('Пожалуйста, заполните поле "Имя".');
+            } else if (email.value == '') {
+                alert('Пожалуйста, заполните поле "Email".');
+                // else if (password != passwordR) {
+                //     alert('Пароли не совпадают');
+            } else if (select.value == 'Россия') {
+                alert('В настоящий момент для России услуга недоступна.');
+            } else if (checkbox.checked) {
+                alert(`Добро пожаловать, ${name.value}!`);
+            } else {
+                alert('Пожалуйста, ознакомьтесь и согласитесь с Соглашением');
+            }
         }
-
-        // button.onclick = function () {
-        //     if (country.value = 'Россия') {
-        //         alert('Для России в данный момент регистрация невозможна')
-        //     } else if (name == '') {
-        //         alert('Пожалуйста, заполните поле "Имя".')
-        //     } else {
-        //         alert(`Добро пожаловать, ${name}!`);
-        //     }
-        // }
     </script>
 </body>
 
