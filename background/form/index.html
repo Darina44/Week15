@@ -87,17 +87,18 @@
             <input type="checkbox" name="agree" id="agree">
             <span>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Соглашением о
                     конфиденциальности</a>.</span>
-            <button type="button" id="send" class="button" onclick="sendForm()">Отправить</button>
+            <button type="button" id="send" class="button">Отправить</button>
         </form>
     </div>
 
     <script>
-        let name = document.getElementById("name").value;
-        // let send = document.getElementById("send").value;
+        let name = document.getElementById("name");
+        let button = document.getElementById("send");
+
+        button.onclick = sendForm;
 
         function sendForm() {
-            console.log(name);
-            alert(name);
+            alert((name).value);
         }
 
         // button.onclick = function () {
