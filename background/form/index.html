@@ -8,29 +8,52 @@
     <title>Document</title>
     <style>
         .form-wrapper {
-            width: 30%;
+            width: 40%;
             min-width: 300px;
             background-color: antiquewhite;
             border-radius: 5%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding-left: 1%;
         }
 
-        p {
-            margin: 2%;
+        input[type=text],
+        input[type=password] {
+            width: 40%;
+            padding: 2%;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 5%;
         }
 
-        .sex-selector {
-            margin: 3% 0;
+        input[type=text]:focus,
+        input[type=password]:focus {
+            outline: none;
         }
 
         .country-selector {
-            margin: 3% 0;
+            margin: 5px 0 22px 0;
         }
 
-        .emailform {
-            margin: 3% 0;
+        h1 {
+            margin: 5% 0 0 0;
+        }
+
+        .button {
+            margin: 5% 0;
+            padding: 2% 0;
+            background-color: #6fd072;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 98%;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -38,44 +61,54 @@
 <body>
     <div class="form-wrapper">
         <h1>Регистрация:</h1>
+        <p>Пожалуйста, заполните эту форму, если вы хотите стать членом сообщества</p>
         <form id="form">
             <label for="name">Имя</label>
-            <input type="text" id="name"></form>
-        <label for="lastname">Фамилия</label>
-        <input type="text" id="lastname">
-        <div class="sex-selector">
-            <p>Пол:</p>
-            <input type="radio" name="sex">женский
-            <input type="radio" name="sex">мужской
-        </div>
-        <div class="country-selector">
-            <select name="country" id="country">
-                <option>Выберите страну проживания:</option>
-                <option value="Россия">Россия</option>
-                <option value="Украина">Украина</option>
-                <option value="Беларусь">Беларусь</option>
-            </select>
-        </div>
-        <div class="emailform">
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя"></br>
+
             <label for="email">Email</label>
-            <input type="email">
-        </div>
-        <button id="send">Отправить</button>
+            <input type="text" name="email" id="email" placeholder="Введите вашу почту"></br>
+
+            <label for="psw">Пароль</label>
+            <input type="password" id="psw" name="psw" placeholder="Придумайте пароль"></br>
+
+            <label for="psw-repeat">Повторите пароль</label>
+            <input type="password" id="psw-repeat" name="psw-repeat" placeholder="Повторите пароль">
+
+            <div class="country-selector">
+                <select name="country" id="country">
+                    <option>Выберите страну проживания:</option>
+                    <option value="Россия">Россия</option>
+                    <option value="Украина">Украина</option>
+                    <option value="Беларусь">Беларусь</option>
+                </select>
+            </div>
+
+            <input type="checkbox" name="agree" id="agree">
+            <span>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Соглашением о
+                    конфиденциальности</a>.</span>
+            <button type="button" id="send" class="button" onclick="sendForm()">Отправить</button>
         </form>
     </div>
 
     <script>
         let name = document.getElementById("name").value;
-        let button = document.getElementById("send");
-        button.onclick = function () {
-            if (country.value = 'Россия') {
-                alert('Для России в данный момент регистрация невозможна')
-            } else if (name == '') {
-                alert('Пожалуйста, заполните поле "Имя".')
-            } else {
-                alert(`Добро пожаловать, ${name}!`);
-            }
+        // let send = document.getElementById("send").value;
+
+        function sendForm() {
+            console.log(name);
+            alert(name);
         }
+
+        // button.onclick = function () {
+        //     if (country.value = 'Россия') {
+        //         alert('Для России в данный момент регистрация невозможна')
+        //     } else if (name == '') {
+        //         alert('Пожалуйста, заполните поле "Имя".')
+        //     } else {
+        //         alert(`Добро пожаловать, ${name}!`);
+        //     }
+        // }
     </script>
 </body>
 
